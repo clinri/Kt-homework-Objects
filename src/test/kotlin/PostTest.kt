@@ -13,19 +13,19 @@ class PostTest {
     }
     @Test
     fun test_post_id_not_equals_zero() {
-        val id = WallService.add(Post(text = "Текст поста1"))
+        val id = WallService.add(Post(text = "Текст поста1",attachments = null))
         Assert.assertNotEquals(id,0)
     }
     @Test
     fun test_change_post_with_actual_id(){
-        WallService.add(Post(text = "Текст поста1"))
-        val result = WallService.update(Post(id = 1, text = "Текст поста4"))
+        WallService.add(Post(text = "Текст поста1",attachments = null))
+        val result = WallService.update(Post(id = 1, text = "Текст поста4",attachments = null))
         assertTrue(result)
     }
     @Test
     fun test_change_post_with_false_id(){
-        WallService.add(Post(text = "Текст поста1"))
-        val result = WallService.update(Post(id = 2, text = "Текст поста4"))
+        WallService.add(Post(text = "Текст поста1",attachments = null))
+        val result = WallService.update(Post(id = 2, text = "Текст поста4",attachments = null))
         assertFalse(result)
     }
 }
