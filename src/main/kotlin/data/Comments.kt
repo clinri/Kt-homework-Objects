@@ -1,3 +1,5 @@
+package data
+
 class Comments(
     var count: Int = 0, // количество комментариев
     val can_post: Boolean = false, //может ли текущий пользователь комментировать запись
