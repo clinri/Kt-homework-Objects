@@ -19,13 +19,13 @@ class PostTest {
     @Test
     fun test_change_post_with_actual_id(){
         WallService.add(Post(text = "Текст поста1"))
-        val result = WallService.update(Post(id = 2, text = "Текст поста4"))
+        val result = WallService.update(Post(id = 1, text = "Текст поста4"))
         assertTrue(result)
     }
     @Test
     fun test_change_post_with_false_id(){
         WallService.add(Post(text = "Текст поста1"))
-        val result = WallService.update(Post(id = 1, text = "Текст поста4"))
+        val result = WallService.update(Post(id = 2, text = "Текст поста4"))
         assertFalse(result)
     }
 }
