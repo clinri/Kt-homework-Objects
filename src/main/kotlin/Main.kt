@@ -11,10 +11,10 @@ fun main() {
             id = 3,
             text = "Текст поста4",
             attachments = arrayOf(
-                Photo(data = PhotoAttachment(1,23,"url1","url2")),
-                Video(data = VideoAttachment(2,25,"video","good")),
-                Audio(data = AudioAttachment(2,25,"Metallica","Song")),
-                Link(data = LinkAttachment("url","Url")),
-                Geo(data = GeoAttachment("place",Coordinates(2324234,123324324)))
+                PhotoAttachment(data = Photo(1,23,"url1","url2")),
+                VideoAttachment(data = Video(2,25,"video","good")),
+                AudioAttachment(data = Audio(2,25,"Metallica","Song")),
+                LinkAttachment(data = Link("url","Url")),
+                GeoAttachment(data = Geo("place",Coordinates(2324234,123324324)))
             ))))
 }
