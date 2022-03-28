@@ -6,15 +6,31 @@ fun main() {
     val (id2, _, _, _, _, text2) = WallService.add(Post(text = "Текст поста2", attachments = null))
     println("$id1, $text1")
     println("$id2, $text2")
-    println(WallService.update(
-        Post(
-            id = 3,
-            text = "Текст поста4",
-            attachments = arrayOf(
-                Photo(data = PhotoAttachment(1,23,"url1","url2")),
-                Video(data = VideoAttachment(2,25,"video","good")),
-                Audio(data = AudioAttachment(2,25,"Metallica","Song")),
-                Link(data = LinkAttachment("url","Url")),
-                Geo(data = GeoAttachment("place",Coordinates(2324234,123324324)))
-            ))))
+    println(
+        WallService.update(
+            Post(
+                id = 2,
+                text = "Текст поста4",
+                attachments = arrayOf(
+                    PhotoAttachment(data = Photo(1, 23, "url1", "url2")),
+                    VideoAttachment(data = Video(2, 25, "video", "good")),
+                    AudioAttachment(data = Audio(2, 25, "Metallica", "Song")),
+                    LinkAttachment(data = Link("url", "Url")),
+                    GeoAttachment(data = Geo("place", Coordinates(2324234, 123324324))),
+                ),
+            ),
+        )
+    )
+    val post = WallService.get(1)
+    val attachArray: Array<Attachment>? = post.attachments
+    for (e in attachArray!!){
+        println(e.type)
+        when(e){
+            is PhotoAttachment -> println((e as PhotoAttachment).data.id)
+            is VideoAttachment -> println((e as VideoAttachment).data.id)
+            is AudioAttachment -> println((e as AudioAttachment).data.id)
+            is LinkAttachment -> println((e as LinkAttachment).data.title)
+            is GeoAttachment -> println((e as GeoAttachment).data.type)
+        }
+    }
 }
