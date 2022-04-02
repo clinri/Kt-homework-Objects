@@ -23,7 +23,9 @@ object WallService {
         return false
     }
 
-    fun removeAll(){
+    fun get(id: Int): Post = posts[id]
+
+    fun removeAll() {
         posts = emptyArray<Post>()
         postCount = 1L
     }
