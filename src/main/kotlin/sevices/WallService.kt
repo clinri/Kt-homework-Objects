@@ -1,10 +1,13 @@
 package sevices
 
+import data.Comment
 import data.Post
 
 object WallService {
     private var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
     private var postCount = 1L
+    private var commentCount = 1L
 
     fun add(post: Post): Post {
         val postWirhId = post.copy(id = postCount++)
@@ -28,5 +31,11 @@ object WallService {
     fun removeAll() {
         posts = emptyArray<Post>()
         postCount = 1L
+    }
+
+    fun createComment(comment: Comment) {
+        for ((index, postХ) in posts.withIndex()){
+            if (comment.id == postХ.id)
+        }
     }
 }

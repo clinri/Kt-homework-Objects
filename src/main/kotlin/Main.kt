@@ -1,4 +1,5 @@
 import data.*
+import data.Attachment.*
 import sevices.WallService
 
 fun main() {
@@ -24,8 +25,8 @@ fun main() {
     val post = WallService.get(1)
     val attachArray: Array<Attachment>? = post.attachments
     for (e in attachArray!!){
-        println(e.type)
-        when(e){
+        println("${(e as Attachment).type} - поле type")
+        when(e) {
             is PhotoAttachment -> println((e as PhotoAttachment).data.id)
             is VideoAttachment -> println((e as VideoAttachment).data.id)
             is AudioAttachment -> println((e as AudioAttachment).data.id)
