@@ -1,4 +1,5 @@
 import data.*
+import data.Attachment.*
 import org.junit.Assert
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

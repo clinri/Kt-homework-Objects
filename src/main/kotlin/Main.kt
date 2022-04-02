@@ -1,4 +1,5 @@
 import data.*
+import data.Attachment.*
 import sevices.WallService
 
 fun main() {
