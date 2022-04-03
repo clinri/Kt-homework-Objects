@@ -25,7 +25,8 @@ data class Post(
     public val likes: Likes = Likes(), //Информация о лайках к записи, объект с полями
     public val reposts: Reposts = Reposts(), //Информация о репостах записи («Рассказать друзьям»), объект с полями
     public val views: Views = Views(), //Информация о просмотрах записи. Объект с единственным полем:
-    public val post_type: PostType = PostType.POST,
+    public val post_type: PostType = PostType.POST, //Тип записи, может принимать следующие значения: post, copy, reply, postpone, suggest.
+    public val attachments: Array<Attachment>?, //Медиавложения записи (фотографии, ссылки и т.п.).
     public val signer_id: Int = 0, //Идентификатор автора, если запись была опубликована от имени сообщества и подписана пользователем;
     public val can_pin: Boolean = false, //Информация о том, может ли текущий пользователь закрепить
     public val can_delete: Boolean = false, //Информация о том, может ли текущий пользователь удалить запись

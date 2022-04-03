@@ -1,7 +1,7 @@
 package data
 
 class Donut(  //Информация о записи VK data.Donut:
-    val is_donut: Boolean = false, //запись доступна только платным подписчикам VK data.Donut;
+    val is_don: Boolean = false, //запись доступна только платным подписчикам VK data.Donut;
     val paid_duration: Int = 0, //время, в течение которого запись будет доступна только платным подписчикам VK data.Donut;
     val placeholder: String = "", //заглушка для пользователей, которые не оформили подписку VK data.Donut. Отображается вместо содержимого записи.
     val can_publish_free_copy: Boolean = false, //можно ли открыть запись для всех пользователей, а не только подписчиков VK data.Donut
